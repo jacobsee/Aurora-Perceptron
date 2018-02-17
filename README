@@ -1,0 +1,20 @@
+Aurora
+Second Assignment for Dr. Cenek's Machine Learning course at UAA
+
+This project is written in Go, which can be downloaded at https://golang.org/dl/.
+It requires the packages go-chart, gonum, and uiprogress.
+
+`go get -u github.com/wcharczuk/go-chart`.
+`go get -u gonum.org/v1/gonum/...`
+`go get -v github.com/gosuri/uiprogress`
+
+This project can be compiled with `go build -o Aurora`.
+
+Once compiled, it can be ran with `./Aurora prepare` to generate the histogram file, `histograms.dat`. (takes about 1 minute on my machine)
+It expects a folder 'images' in the same directory, with subfolders 'aurora' and 'noaurora' containing images to generate histograms for.
+
+Then, it can be ran with `./Aurora run histograms.dat 1000 0.01` to train the perceptron for 1000 epochs with a learning rate of 0.01
+and run validation against 20% of the data. (takes about 10 seconds on my machine)
+
+Demonstration of training:
+https://asciinema.org/a/9GZrb8fyY0nC2bjXcRnwOV92Y
